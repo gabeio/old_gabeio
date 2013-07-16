@@ -24,6 +24,9 @@ app.get '/', (req,res) ->
 	fnr()
 	res.render 'index', {randoms:randoms}
 
+app.get '/about-me', (req,res) ->
+	res.render 'aboutme', {}
+
 if not module.parent
 	if process.argv[2]
 		app.listen process.argv[2]
