@@ -40,7 +40,7 @@ app.get '/', (req,res) ->
 	res.render 'index', {randoms:randoms}
 
 app.get '/normal', (req,res) ->
-	
+	res.render 'normal', {randoms:normal}
 
 app.get '/about-me', (req,res) ->
 	res.render 'aboutme', {}
