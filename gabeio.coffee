@@ -16,8 +16,10 @@ fnr = ()-> #fills randoms with random numbers
 	randoms=[]
 	i=0
 	while i<30
-		randoms.push(Math.floor(Math.random()*12))
-		i++
+		rand_num = Math.floor(Math.random()*12) #generate & store random number(0-12)
+		if rand_num>2 # if random# is >2
+			randoms.push(rand_num) #then add random number to already existing list
+			i++ # and add 1 to i...
 	#console.log randoms
 
 app.get '/', (req,res) ->
