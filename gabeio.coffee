@@ -28,9 +28,19 @@ fnr = ()-> #F.ills randoms with random numbers
 			i++ # and add 1 to i...
 	#console.log randoms
 
+normal=[0]
+i=0
+while i<11
+	normal.push(11)
+	normal.push(0)
+	i++
+
 app.get '/', (req,res) ->
 	fnr()
 	res.render 'index', {randoms:randoms}
+
+app.get '/normal', (req,res) ->
+	
 
 app.get '/about-me', (req,res) ->
 	res.render 'aboutme', {}
