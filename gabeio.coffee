@@ -12,8 +12,14 @@ swig.init {
 
 randoms=[]
 
-fnr = ()-> #fills randoms with random numbers
+fnr = ()-> #F.ills randoms with random numbers
 	randoms=[]
+	out = false
+	while out!=true # loop until we get a number between 5 & 60
+		number = Math.floor(Math.random()*60)
+		if number>5
+			randoms.push(number)
+			out=true
 	i=0
 	while i<30
 		rand_num = Math.floor(Math.random()*12) #generate & store random number(0-12)
