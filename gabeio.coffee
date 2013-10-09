@@ -2,13 +2,11 @@ swig = require 'swig'
 con = require 'consolidate'
 ex = require 'express'
 app = ex()
-app.engine '.html', con.swig
+
+app.engine 'html', swig.renderFile
+
 app.set 'view engine', 'html'
-app.set 'views', '.'
-swig.init {
-	cache: false
-	root: '.'
-}
+app.set 'views', __dirname
 
 randoms=[]
 
