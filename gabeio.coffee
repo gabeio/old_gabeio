@@ -43,10 +43,14 @@ app.get '/normal', (req,res) ->
 app.get '/about-me', (req,res) ->
 	res.render 'aboutme', {}
 
-if not module.parent
-	if process.argv[2]
-		app.listen process.argv[2]
-	else
-		app.listen 8008
+app.get '/robots.txt', (req,res) ->
+	res.send """User-agent: *
+Disallow:"""
+
+#if not module.parent
+if process.argv[2]
+	app.listen process.argv[2]
 else
-	exports ? app
+	app.listen 8008
+#else
+#	exports ? app
